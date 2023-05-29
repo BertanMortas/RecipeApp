@@ -1,0 +1,29 @@
+server:
+  port: 9090
+spring:
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+    service:
+      name: user-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/RecipeAuthDB
+    username: postgres
+    password: Bm15481527
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java7
+    password: root
+jwt:
+  secretkey: ${secretkey}
+  audience: ${audience}
+  issuer: ${issuer}
